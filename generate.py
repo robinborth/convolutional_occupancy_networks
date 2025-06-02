@@ -207,10 +207,10 @@ time_df.set_index(['idx'], inplace=True)
 time_df.to_pickle(out_time_file)
 
 # Create pickle files  with main statistics
-time_df_class = time_df.groupby(by=['class name']).mean()
-time_df_class.to_pickle(out_time_file_class)
+# time_df_class = time_df.groupby(by=['class name']).mean()
+# time_df_class.to_pickle(out_time_file_class)
 
 # Print results
-time_df_class.loc['mean'] = time_df_class.mean()
-print('Timings [s]:')
-print(time_df_class)
+# time_df_class.loc['mean'] = time_df_class.mean()
+# print('Timings [s]:')
+# print(time_df_class)
