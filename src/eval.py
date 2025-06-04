@@ -1,8 +1,7 @@
 import logging
 import numpy as np
 import trimesh
-# from scipy.spatial import cKDTree
-from src.utils.libkdtree import KDTree
+from pykdtree.kdtree import KDTree
 from src.utils.libmesh import check_mesh_contains
 from src.common import compute_iou
 

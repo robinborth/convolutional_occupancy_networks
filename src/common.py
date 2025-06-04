@@ -3,7 +3,7 @@ import torch
 # from src.utils.libkdtree import KDTree
 import numpy as np
 import math
-
+from pykdtree.kdtree import KDTree
 
 def compute_iou(occ1, occ2):
     ''' Computes the Intersection over Union (IoU) value for two sets of
@@ -122,24 +122,24 @@ def chamfer_distance_kdtree(points1, points2, give_id=False):
     return chamfer
 
 
-# def get_nearest_neighbors_indices_batch(points_src, points_tgt, k=1):
-#     ''' Returns the nearest neighbors for point sets batchwise.
+def get_nearest_neighbors_indices_batch(points_src, points_tgt, k=1):
+    ''' Returns the nearest neighbors for point sets batchwise.
 
-#     Args:
-#         points_src (numpy array): source points
-#         points_tgt (numpy array): target points
-#         k (int): number of nearest neighbors to return
-#     '''
-#     indices = []
-#     distances = []
+    Args:
+        points_src (numpy array): source points
+        points_tgt (numpy array): target points
+        k (int): number of nearest neighbors to return
+    '''
+    indices = []
+    distances = []
 
-#     for (p1, p2) in zip(points_src, points_tgt):
-#         kdtree = KDTree(p2)
-#         dist, idx = kdtree.query(p1, k=k)
-#         indices.append(idx)
-#         distances.append(dist)
+    for (p1, p2) in zip(points_src, points_tgt):
+        kdtree = KDTree(p2)
+        dist, idx = kdtree.query(p1, k=k)
+        indices.append(idx)
+        distances.append(dist)
 
-#     return indices, distances
+    return indices, distances
 
 
 def make_3d_grid(bb_min, bb_max, shape):

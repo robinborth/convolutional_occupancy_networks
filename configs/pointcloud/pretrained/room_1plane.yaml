@@ -1,4 +1,12 @@
 inherit_from: configs/pointcloud/room_1plane.yaml
+data:
+  classes: ['']
+  path: data/demo/synthetic_room_dataset
+  pointcloud_n: 10000
+  pointcloud_file: pointcloud
+  voxels_file: null
+  points_file: null
+  points_iou_file: null
 generation:
   generation_dir: generation_pretrained
 test:

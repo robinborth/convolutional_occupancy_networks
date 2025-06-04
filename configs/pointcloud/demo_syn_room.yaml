@@ -3,10 +3,12 @@ data:
   classes: ['']
   path: data/demo/synthetic_room_dataset
   pointcloud_n: 10000
+  points_file: points_iou
+  points_iou_file: points_iou
   pointcloud_file: pointcloud
+  pointcloud_chamfer_file: pointcloud
+  multi_files: 10
   voxels_file: null
-  points_file: null
-  points_iou_file: null
 training:
   out_dir: out/demo_syn_room
 test:

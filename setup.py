@@ -13,17 +13,17 @@ numpy_include_dir = numpy.get_include()
 
 # Extensions
 # pykdtree (kd tree)
-pykdtree = Extension(
-    'src.utils.libkdtree.pykdtree.kdtree',
-    sources=[
-        'src/utils/libkdtree/pykdtree/kdtree.c',
-        'src/utils/libkdtree/pykdtree/_kdtree_core.c'
-    ],
-    language='c',
-    extra_compile_args=['-std=c99', '-O3', '-fopenmp'],
-    extra_link_args=['-lgomp'],
-    include_dirs=[numpy_include_dir]
-)
+# pykdtree = Extension(
+#     'src.utils.libkdtree.pykdtree.kdtree',
+#     sources=[
+#         'src/utils/libkdtree/pykdtree/kdtree.c',
+#         'src/utils/libkdtree/pykdtree/_kdtree_core.c'
+#     ],
+#     language='c',
+#     extra_compile_args=['-std=c99', '-O3', '-fopenmp'],
+#     extra_link_args=['-lgomp'],
+#     include_dirs=[numpy_include_dir]
+# )
 
 # mcubes (marching cubes algorithm)
 mcubes_module = Extension(
